@@ -6,7 +6,11 @@ public class Vecteur {
     public static final int TAILLE_INITIALE = 5;
 
     public Vecteur() {
-        tableau = new int[TAILLE_INITIALE];
+        this(TAILLE_INITIALE);
+    }
+
+    public Vecteur(int tailleInitiale) {
+        tableau = new int[tailleInitiale];
         nbElements = 0;
     }
 
