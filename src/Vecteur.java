@@ -34,9 +34,7 @@ public class Vecteur {
     }
 
     public void ajouter(int element) {
-        if (nbElements >= tableau.length)
-            resize();
-        tableau[nbElements++] = element;
+        ajouter(element, nbElements);
     }
 
     public boolean ajouter(int element, int index) {
@@ -49,6 +47,25 @@ public class Vecteur {
             tableau[i] = tableau[i - 1];
         tableau[index] = element;
         nbElements++;
+        return true;
+    }
+
+    public void ajouter(Vecteur autre) {
+        for (int i = 0 ; i < autre.getNbElements(); i++)
+            this.ajouter(autre.getElementAt(i));
+    }
+
+    public int trouve(int valeur) {
+        for (int i = 0; i < nbElements; i++)
+            if (tableau[i] == valeur)
+                return i;
+        return -1;
+    }
+
+    public boolean trouveTout(Vecteur autre) {
+        for (int i = 0 ; i < autre.getNbElements(); i++)
+            if (trouve(autre.getElementAt(i)) == -1)
+                return false;
         return true;
     }
 
