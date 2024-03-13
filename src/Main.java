@@ -35,5 +35,10 @@ public class Main {
         data.ajouter(80, 10);
         System.out.println(data);
         System.out.println("nbElements: " + data.getNbElements());
+
+        System.out.println("\nTest 6: Ajouts d'éléments à des positions invalides");
+        System.out.println("index négatif: " + data.ajouter(99, -1));
+        System.out.println("index trop grand: " + data.ajouter(99, 15));
+        System.out.println("nbElements: " + data.getNbElements());
     }
 }

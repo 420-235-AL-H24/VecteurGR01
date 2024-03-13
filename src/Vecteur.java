@@ -15,9 +15,9 @@ public class Vecteur {
     }
 
     public String toString() {
-        String str = "[";
-        for (int i = 0; i < nbElements; i++)
-            str += tableau[i] + ", ";
+        String str = estVide() ? "[" : "[" + tableau[0];
+        for (int i = 1; i < nbElements; i++)
+            str +=  ", " + tableau[i];
         return str + "]";
     }
 
@@ -39,13 +39,17 @@ public class Vecteur {
         tableau[nbElements++] = element;
     }
 
-    public void ajouter(int element, int index) {
+    public boolean ajouter(int element, int index) {
+        if (index < 0 || index > nbElements)
+            //throw new IndexOutOfBoundsException();
+            return false;
         if (nbElements >= tableau.length)
             resize();
         for (int i = nbElements; i > index; i--)
             tableau[i] = tableau[i - 1];
         tableau[index] = element;
         nbElements++;
+        return true;
     }
 
     private void resize() {
