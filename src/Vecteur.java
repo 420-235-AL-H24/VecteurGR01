@@ -28,6 +28,9 @@ public class Vecteur {
     }
 
     private void resize() {
-        //TODO Agrandir le tableau de données.
+        int[] nouveau = new int[RATIO_AGRANDISSEMENT * tableau.length];
+        for (int i = 0 ; i < tableau.length; i++)
+            nouveau[i] = tableau[i];
+        tableau = nouveau;
     }
 }
