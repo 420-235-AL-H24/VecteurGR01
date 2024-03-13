@@ -20,14 +20,20 @@ public class Main {
         data.ajouter(50);
         System.out.println(data);
         System.out.println("nbElements: " + data.getNbElements());
-        System.out.println("estVide: " + data.estVide());
 
         System.out.println("\nTest 4: vérifier l'état du vecteur");
         System.out.println("idx0 : " + data.getElementAt(0));
         System.out.println("idx3 : " + data.getElementAt(3));
         System.out.println("idx5 : " + data.getElementAt(5));
         System.out.println(data);
+
+        System.out.println("\nTest 5: Ajouts d'éléments à des positions spécifiques");
+        data.ajouter(-10, 0);
+        data.ajouter(25, 4);
+        data.ajouter(60, 8);
+        data.ajouter(70, 9);
+        data.ajouter(80, 10);
+        System.out.println(data);
         System.out.println("nbElements: " + data.getNbElements());
-        System.out.println("estVide: " + data.estVide());
     }
 }

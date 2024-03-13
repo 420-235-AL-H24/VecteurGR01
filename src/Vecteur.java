@@ -39,6 +39,15 @@ public class Vecteur {
         tableau[nbElements++] = element;
     }
 
+    public void ajouter(int element, int index) {
+        if (nbElements >= tableau.length)
+            resize();
+        for (int i = nbElements; i > index; i--)
+            tableau[i] = tableau[i - 1];
+        tableau[index] = element;
+        nbElements++;
+    }
+
     private void resize() {
         int[] nouveau = new int[RATIO_AGRANDISSEMENT * tableau.length];
         for (int i = 0 ; i < tableau.length; i++)
