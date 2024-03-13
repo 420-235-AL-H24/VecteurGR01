@@ -21,6 +21,18 @@ public class Vecteur {
         return str + "]";
     }
 
+    public int getElementAt(int index) {
+        return tableau[index];
+    }
+
+    public int getNbElements() {
+        return nbElements;
+    }
+
+    public boolean estVide() {
+        return nbElements == 0;
+    }
+
     public void ajouter(int element) {
         if (nbElements >= tableau.length)
             resize();
