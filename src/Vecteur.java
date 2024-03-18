@@ -87,8 +87,20 @@ public class Vecteur {
     }
 
     public boolean effacerTout(Vecteur autre) {
-        for (int i = 0; i < autre.getNbElements(); i++)
-            this.effacerAt(autre.getElementAt(i));
-        return true;
+        boolean result = false;
+        for (int i = 0; i < autre.getNbElements(); i++) {
+            int valeurAEffacer = autre.getElementAt(i);
+            int indexAEffacer = trouver(valeurAEffacer);
+            if (indexAEffacer != -1) {
+                this.effacerAt(indexAEffacer);
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    public void effacerTout() {
+        tableau = new int[TAILLE_INITIALE];
+        nbElements = 0;
     }
 }

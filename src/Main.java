@@ -83,6 +83,16 @@ public class Main {
         System.out.println(data.effacerTout(test11));
         System.out.println(data);
         System.out.println(data.getNbElements());
+
+        test11.ajouter(99);
+        System.out.println(data.effacerTout(test11));
+        System.out.println(data);
+        System.out.println(data.getNbElements());
+
+        System.out.println("\nTest 12: Effacer tout le contenu d'un vecteur");
+        data.effacerTout();
+        System.out.println(data);
+        System.out.println(data.getNbElements());
     }
 }
 
