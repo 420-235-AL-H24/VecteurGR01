@@ -55,24 +55,24 @@ public class Vecteur {
             this.ajouter(autre.getElementAt(i));
     }
 
-    public int trouve(int valeur) {
+    private void resize() {
+        int[] nouveau = new int[RATIO_AGRANDISSEMENT * tableau.length];
+        for (int i = 0 ; i < tableau.length; i++)
+            nouveau[i] = tableau[i];
+        tableau = nouveau;
+    }
+
+    public int trouver(int valeur) {
         for (int i = 0; i < nbElements; i++)
             if (tableau[i] == valeur)
                 return i;
         return -1;
     }
 
-    public boolean trouveTout(Vecteur autre) {
+    public boolean trouverTout(Vecteur autre) {
         for (int i = 0 ; i < autre.getNbElements(); i++)
-            if (trouve(autre.getElementAt(i)) == -1)
+            if (this.trouver(autre.getElementAt(i)) == -1)
                 return false;
         return true;
-    }
-
-    private void resize() {
-        int[] nouveau = new int[RATIO_AGRANDISSEMENT * tableau.length];
-        for (int i = 0 ; i < tableau.length; i++)
-            nouveau[i] = tableau[i];
-        tableau = nouveau;
     }
 }
