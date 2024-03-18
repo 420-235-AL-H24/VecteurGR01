@@ -86,5 +86,9 @@ public class Vecteur {
         return true;
     }
 
-
+    public boolean effacerTout(Vecteur autre) {
+        for (int i = 0; i < autre.getNbElements(); i++)
+            this.effacerAt(autre.getElementAt(i));
+        return true;
+    }
 }

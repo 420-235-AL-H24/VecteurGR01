@@ -75,7 +75,14 @@ public class Main {
         System.out.println(data);
         System.out.println(data.getNbElements());
 
-        data.ajouter(-99);
+        System.out.println("\nTest 11: Effacer des valeurs provenant d'un autre vecteur");
+        Vecteur test11 = new Vecteur();
+        test11.ajouter(0);
+        test11.ajouter(40);
+        test11.ajouter(96);
+        System.out.println(data.effacerTout(test11));
+        System.out.println(data);
+        System.out.println(data.getNbElements());
     }
 }
 
