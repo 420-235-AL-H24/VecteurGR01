@@ -22,9 +22,9 @@ public class Main {
         System.out.println("nbElements: " + data.getNbElements());
 
         System.out.println("\nTest 4: vérifier l'état du vecteur");
-        System.out.println("idx0 : " + data.getElementAt(0));
-        System.out.println("idx3 : " + data.getElementAt(3));
-        System.out.println("idx5 : " + data.getElementAt(5));
+        System.out.println("idx0 : " + data.getElementAt(0)); // 0
+        System.out.println("idx3 : " + data.getElementAt(3)); // 30
+        System.out.println("idx5 : " + data.getElementAt(5)); // 50
         System.out.println(data);
 
         System.out.println("\nTest 5: Ajouts d'éléments à des positions spécifiques");
@@ -40,5 +40,32 @@ public class Main {
         System.out.println("index négatif: " + data.ajouter(99, -1));
         System.out.println("index trop grand: " + data.ajouter(99, 15));
         System.out.println("nbElements: " + data.getNbElements());
+
+        System.out.println("\nTest 7: Ajouter des valeurs provenant d'un autre vecteur");
+        Vecteur test7 = new Vecteur();
+        test7.ajouter(95);
+        test7.ajouter(96);
+        test7.ajouter(97);
+        data.ajouter(test7);
+        System.out.println(data);
+        System.out.println("nbElements: " + data.getNbElements());
+
+        System.out.println("\nTest 8: Trouver des valeurs présentes dans le vecteur");
+        System.out.println(data.trouver(-10)); // index=0
+        System.out.println(data.trouver(40)); // index=6
+        System.out.println(data.trouver(97)); // index=13
+
+        System.out.println("\nTest 9: Trouver toutes les valeurs d'un autre vecteur");
+        Vecteur test9 = new Vecteur();
+        test9.ajouter(40);
+        test9.ajouter(97);
+        test9.ajouter(-10);
+        System.out.println(data.trouverTout(test9)); // true
+
+        test9.ajouter(99);
+        System.out.println(data.trouverTout(test9)); // false
+
+        System.out.println(data);
+        System.out.println(data.getNbElements());
     }
 }
