@@ -1,17 +1,23 @@
+import org.junit.jupiter.api.BeforeEach;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class VecteurTest {
+    Vecteur data;
 
-    @org.junit.jupiter.api.Test
-    void getElementAt() {
-        Vecteur data = new Vecteur();
+    @BeforeEach
+    void setUp() {
+        data = new Vecteur();
         data.ajouter(0);
         data.ajouter(10);
         data.ajouter(20);
         data.ajouter(30);
         data.ajouter(40);
         data.ajouter(50);
+    }
 
+    @org.junit.jupiter.api.Test
+    void getElementAt() {
         assertEquals(0, data.getElementAt(0));
         assertEquals(30, data.getElementAt(3));
         assertEquals(50, data.getElementAt(5));
@@ -21,14 +27,6 @@ class VecteurTest {
     void getNbElements() {
         Vecteur vide = new Vecteur();
         assertEquals(0, vide.getNbElements());
-
-        Vecteur data = new Vecteur();
-        data.ajouter(0);
-        data.ajouter(10);
-        data.ajouter(20);
-        data.ajouter(30);
-        data.ajouter(40);
-        data.ajouter(50);
         assertEquals(6, data.getNbElements());
     }
 
@@ -36,19 +34,18 @@ class VecteurTest {
     void estVide() {
         Vecteur vide = new Vecteur();
         assertEquals(true, vide.estVide());
-
-        Vecteur data = new Vecteur();
-        data.ajouter(0);
-        data.ajouter(10);
-        data.ajouter(20);
-        data.ajouter(30);
-        data.ajouter(40);
-        data.ajouter(50);
         assertEquals(false, data.estVide());
     }
 
     @org.junit.jupiter.api.Test
     void ajouter() {
+        data.ajouter(90);
+        data.ajouter(91);
+        data.ajouter(92);
+        assertEquals(90, data.getElementAt(6));
+        assertEquals(91, data.getElementAt(7));
+        assertEquals(92, data.getElementAt(8));
+        assertEquals(9, data.getNbElements());
     }
 
     @org.junit.jupiter.api.Test
