@@ -75,4 +75,16 @@ public class Vecteur {
                 return false;
         return true;
     }
+
+    public boolean effacerAt(int index) {
+        if (index < 0 || index > nbElements)
+            //throw new IndexOutOfBoundsException();
+            return false;
+        for (int i = index; i < nbElements; i++)
+            tableau[i] = tableau[i + 1];
+        nbElements--;
+        return true;
+    }
+
+
 }

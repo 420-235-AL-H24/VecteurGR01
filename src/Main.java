@@ -67,5 +67,35 @@ public class Main {
 
         System.out.println(data);
         System.out.println(data.getNbElements());
+
+        System.out.println("\nTest 10: Effacer des valeurs à une position spécifique");
+        System.out.println(data.effacerAt(0));
+        System.out.println(data.effacerAt(6));
+        System.out.println(data.effacerAt(11));
+        System.out.println(data);
+        System.out.println(data.getNbElements());
+
+        data.ajouter(-99);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
